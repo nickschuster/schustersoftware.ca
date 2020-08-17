@@ -1,7 +1,7 @@
 import React from "react"
 import { Navbar, Nav, NavDropdown } from "react-bootstrap"
 
-const Header = () => {
+export default function Header() {
     return (
         <Navbar bg="dark" variant="dark">
             <Navbar.Brand>Schuster Development</Navbar.Brand>
@@ -22,5 +22,3 @@ const Header = () => {
         </Navbar>
     )
 }
-
-export default Header

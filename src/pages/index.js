@@ -1,10 +1,11 @@
 import React from "react"
 import Header from "../components/header"
 
-const Home = () => {
+import '../css/global.css'
+
+// Controlls the entire application.
+export default function Home() {
   return (
     <Header />  
   )
 }
-
-export default Home
