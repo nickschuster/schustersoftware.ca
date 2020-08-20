@@ -1,9 +1,9 @@
 import React from "react"
 import Header from "../components/header"
 
-import '../css/global.css'
+import "../css/global.scss"
 
-// Controlls the entire application.
+// Controls the entire website.
 export default function Home() {
   return (
     <Header />  
