@@ -1,3 +1,5 @@
+// Basic 404 page.
+
 import React from "react"
 
 export default function PageNotFound() {
