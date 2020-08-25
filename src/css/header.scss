@@ -1,6 +1,13 @@
 /* Custom styling for the navbar header. */
 
-.navbar-custom {
-    color: blue;
-    background-color: black;
+#logo-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    padding: 20px;
+}
+
+.logo-background {
+    background-color: #5c5c5c;
 }

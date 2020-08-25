@@ -1,11 +1,18 @@
+// Controls the entire website.
+
+// Packages.
 import React from "react"
 import Header from "../components/header"
+import Background from "../components/background"
 
+// CSS.
 import "../css/global.scss"
 
-// Controls the entire website.
 export default function Home() {
   return (
-    <Header />  
+    <React.Fragment>
+      <Header />  
+      <Background />
+    </React.Fragment>
   )
 }
