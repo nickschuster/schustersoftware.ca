@@ -3,17 +3,17 @@
 // Packages.
 import React from "react"
 import Header from "../components/header"
+import Home from "../components/home"
 
 // CSS.
 import "../css/global.scss"
 
-export default function Home() {
+export default function index() {
   return (
     <React.Fragment>
       <div id="background">
         <Header /> 
-        <hr></hr>
-        <br></br>
+        <Home />
       </div> 
     </React.Fragment>
   )
