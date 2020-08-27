@@ -1,5 +1,12 @@
 // Global css rules and bootstrap overwrites
 
+// Bootstrap css import
+@import "~bootstrap/scss/bootstrap";
+
+* {
+    font-family: "Noto Sans JP";
+}
+
 #background { 
     background: url(../images/backgroundv2.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -19,6 +26,24 @@
     margin-right: auto;
 }
 
+.page-title {
+    color: white;
+    max-width: 600px;
+    margin: auto;
+    font-weight: bold;
+}
 
-// Bootstrap css import
-@import "~bootstrap/scss/bootstrap";
+.modal-header, .modal-body, .modal-footer {
+    background-color: black;
+    color: white;
+;
+}
+
+.close {
+    color: white; 
+    opacity: 1;
+}
+
+.close:hover {
+    color: #0076ff;
+}
