@@ -1,14 +1,23 @@
 // Global css rules and bootstrap overwrites
 
 #background { 
-    background-color: #00ff88
-    /* no-repeat center center fixed; 
+    background: url(../images/backgroundv2.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;*/
+    background-size: cover;
+    background-color: rgba(0,0,0,0.4);
 }
 
+#content-container {
+    @media (max-width: 2000px) {
+        width: 90%;
+    }
+    width: 60%;
+    background-color: rgba(92, 92, 92, 0.7);
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
 // Bootstrap css import

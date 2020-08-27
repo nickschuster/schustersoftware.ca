@@ -12,8 +12,10 @@ export default function index() {
   return (
     <React.Fragment>
       <div id="background">
-        <Header /> 
-        <Home />
+        <div id="content-container">
+          <Header /> 
+          <Home />
+        </div>
       </div> 
     </React.Fragment>
   )

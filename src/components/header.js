@@ -17,8 +17,8 @@ export default function Header() {
             <Row className="d-flex justify-content-center">
                 <Col className="mx-auto text-center">
                     <a className="navbar-link" href="#home">Home</a>
-                    <a className="navbar-link" href="#home">About</a>
-                    <a className="navbar-link" href="services">Contact</a>
+                    <a className="navbar-link" href="#about">About</a>
+                    <a className="navbar-link" href="#contact">Contact</a>
                 </Col>
             </Row>
             <br />
