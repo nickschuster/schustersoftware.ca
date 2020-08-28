@@ -31,7 +31,7 @@ export default function Home() {
                 <Row className="justify-content-center">
                     <Col className="form-group" lg={4} md={4} xs={12}>
                         <div>
-                            <img className="service-image" src={require("../images/front-end.png")} alt="Front-end" role="button" onClick={frontendClicked}/>
+                            <input type="image" className="service-image" src={require("../images/front-end.png")} alt="Front-end" onClick={frontendClicked}/>
                             <h2 className="service-title">Front-end</h2>
                         </div>
                         <Modal dialogClassName="service-modal" show={showFrontend} onHide={closeFrontend}>
@@ -43,7 +43,7 @@ export default function Home() {
                     </Col>
                     <Col className="form-group" lg={4} md={4} xs={12}>
                         <div>
-                            <img className="service-image" src={require("../images/middleware.png")} alt="Middleware" role="button" onClick={middlewareClicked}/>
+                            <input type="image" className="service-image" src={require("../images/middleware.png")} alt="Middleware" onClick={middlewareClicked}/>
                             <h2 className="service-title">Middleware</h2>
                         </div>
                         <Modal dialogClassName="service-modal" show={showMiddleware} onHide={closeMiddleware}>
@@ -55,7 +55,7 @@ export default function Home() {
                     </Col>
                     <Col className="form-group" lg={4} md={4} xs={12}>
                         <div>
-                            <img className="service-image" src={require("../images/back-end.png")} alt="Back-end" role="button" onClick={backendClicked}/>
+                            <input type="image" className="service-image" src={require("../images/back-end.png")} alt="Back-end" onClick={backendClicked}/>
                             <h2 className="service-title">Back-end</h2>
                         </div>
                         <Modal dialogClassName="service-modal" show={showBackend} onHide={closeBackend}>

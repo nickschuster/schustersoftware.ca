@@ -5,6 +5,7 @@ import React from "react"
 import Header from "../components/header"
 import Home from "../components/home"
 import About from "../components/about"
+import Contact from "../components/contact"
 
 // CSS.
 import "../css/global.scss"
@@ -17,6 +18,7 @@ export default function index() {
           <Header /> 
           <Home />
           <About />
+          <Contact />
         </div>
       </div> 
     </React.Fragment>
