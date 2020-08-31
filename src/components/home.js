@@ -36,7 +36,7 @@ export default function Home() {
                         </div>
                         <Modal dialogClassName="service-modal" show={showFrontend} onHide={closeFrontend}>
                             <Modal.Header closeButton>
-                                <Modal.Title>UX and UI</Modal.Title>
+                                <Modal.Title>Front-end</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>Test modal</Modal.Body>
                         </Modal>
@@ -48,7 +48,7 @@ export default function Home() {
                         </div>
                         <Modal dialogClassName="service-modal" show={showMiddleware} onHide={closeMiddleware}>
                             <Modal.Header closeButton>
-                                <Modal.Title>API's and Server's</Modal.Title>
+                                <Modal.Title>Middleware</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>Test modal</Modal.Body>
                         </Modal>
@@ -60,7 +60,7 @@ export default function Home() {
                         </div>
                         <Modal dialogClassName="service-modal" show={showBackend} onHide={closeBackend}>
                             <Modal.Header closeButton>
-                                <Modal.Title>Databases and Processing</Modal.Title>
+                                <Modal.Title>Back-end</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>Test modal</Modal.Body>
                         </Modal>

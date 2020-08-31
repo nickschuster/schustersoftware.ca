@@ -1,1 +1,16 @@
 // Rules about contact information
+
+#email {
+    color: #0076ff;
+    font-size: clamp(5px, 5vw, 45px);
+}
+
+#phone {
+    color: white;
+    font-size: clamp(5px, 5vw, 45px);
+}
+
+#phone-details {
+    color: white;
+    font-size: clamp(10px, 3vw, 16px);
+}

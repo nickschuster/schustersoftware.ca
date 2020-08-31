@@ -1,2 +1,3 @@
 html - #0076ff
 background - #5c5c5c
+dark color - #060f1a

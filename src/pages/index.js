@@ -4,8 +4,8 @@
 import React from "react"
 import Header from "../components/header"
 import Home from "../components/home"
-import About from "../components/about"
 import Contact from "../components/contact"
+import Footer from "../components/footer"
 
 // CSS.
 import "../css/global.scss"
@@ -17,10 +17,13 @@ export default function index() {
         <div id="content-container">
           <Header /> 
           <Home />
-          <About />
           <Contact />
+          <div id="push-footer"></div>
         </div>
       </div> 
+      <div id="footer">
+        <Footer />
+      </div>
     </React.Fragment>
   )
 }
