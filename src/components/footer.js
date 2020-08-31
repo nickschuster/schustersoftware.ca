@@ -35,6 +35,13 @@ const Footer = () => {
                 <Row>
                     <Col className="text-center"><br /><h1>Links</h1><br /></Col>
                 </Row>
+                <Row className="justify-content-center">
+                    <Col lg={1}><a href="https://www.github.com/nickschuster"><img className="link-image" id="github-logo" src={require("../images/github-logo.png")} alt="GitHub"/></a></Col>
+                    <Col lg={1}><a href="https://www.linkedin.com/in/nikolas-schuster-25184b16b/" ><img className="link-image" id="linkedin-logo" src={require("../images/linkedin-logo.png")} alt="LinkedIn"/></a></Col>
+                </Row>
+                <Row>
+                    <Col className="text-center"><br /><br /><p>&#169; 2020 Schuster Development Ltd.</p><br /></Col>
+                </Row>
             </Container>
         </React.Fragment>
     )
