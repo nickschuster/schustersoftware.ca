@@ -18,10 +18,7 @@ export default function Contact() {
                     <Col className="text-center"><a href="mailto:nick@schusterdevelopment.ca"><h1 id="email">nick@schusterdevelopment.ca</h1></a></Col>
                 </Row>
                 <Row>
-                    <Col className="text-center"><br /><h1 id="phone">+1 (250) 213 2918</h1></Col>
-                </Row>
-                <Row>
-                    <Col className="text-center"><p id="phone-details">9am to 5pm PDT</p><br /></Col>
+                    <Col className="text-center"><br /><h1 id="phone">+1 (250) 213 2918</h1><br /><br /></Col>
                 </Row>
             </Container>
         </React.Fragment>   

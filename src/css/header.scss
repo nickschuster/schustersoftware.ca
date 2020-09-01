@@ -24,4 +24,11 @@
     color: white;
     text-decoration-color: #0076ff;
     text-shadow: 5px 5px 50px black;
+    cursor: pointer;
+}
+
+.disabled-link {
+    text-decoration: none;
+    color: grey;
+    pointer-events: none;
 }
