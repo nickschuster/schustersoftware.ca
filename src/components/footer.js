@@ -10,7 +10,6 @@ import "../css/footer.scss"
 const Footer = () => {
     // Keeps the footer stuck to the bottom of the page.
     const viewPortChanged = () => {
-        console.log("called")
         let contentHeight = (document.getElementById("content-container").clientHeight +
                             document.getElementById("footer").clientHeight -
                             document.getElementById("push-footer").clientHeight)
@@ -19,9 +18,6 @@ const Footer = () => {
         } else {
             document.getElementById("push-footer").style.height = "0px"
         }
-
-        console.log("content", contentHeight)
-        console.log("window", window.innerHeight)
     }
 
     React.useEffect(() => {
