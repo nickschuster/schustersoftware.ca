@@ -27,6 +27,15 @@ export default function Home() {
                 <Row className="justify-content-center">
                     <Col className="text-center mx-auto" xs={12}><h1 className="page-title">Full-stack Web Development</h1><br /></Col>
                 </Row>
+                <Row className="justify-content-center">
+                    <Col className="text-center"><p id="intro-blurb">
+                    Cloud leveraged web applications designed and developed front-to-back. 
+                    <br /><br />
+                    Serverless architecture as the design goal whenever possible.
+                    <br /><br />
+                    Your idea translated to technical specifications and implemented using cutting edge technology.
+                    </p></Col>
+                </Row>
                 <br />
                 <Row className="justify-content-center">
                     <Col className="form-group" lg={4} md={4} xs={12}>
@@ -38,7 +47,14 @@ export default function Home() {
                             <Modal.Header closeButton>
                                 <Modal.Title>Front-end</Modal.Title>
                             </Modal.Header>
-                            <Modal.Body>Test modal</Modal.Body>
+                            <Modal.Body>
+                                <ul>
+                                    <li>User interface design and implementation</li><br />
+                                    <li>Search engine optimization</li><br />
+                                    <li>Platform/Mobile compatibility</li><br />
+                                    <li>Client and server side rendering</li>
+                                </ul>
+                            </Modal.Body>
                         </Modal>
                     </Col>
                     <Col className="form-group" lg={4} md={4} xs={12}>
@@ -50,7 +66,14 @@ export default function Home() {
                             <Modal.Header closeButton>
                                 <Modal.Title>Middleware</Modal.Title>
                             </Modal.Header>
-                            <Modal.Body>Test modal</Modal.Body>
+                            <Modal.Body>
+                                <ul>
+                                    <li>API design and implementation</li><br />
+                                    <li>Authentication and authorization</li><br />
+                                    <li>Load balancing and usage scaling</li><br />
+                                    <li>Server side processing</li>
+                                </ul>
+                            </Modal.Body>
                         </Modal>
                     </Col>
                     <Col className="form-group" lg={4} md={4} xs={12}>
@@ -62,7 +85,13 @@ export default function Home() {
                             <Modal.Header closeButton>
                                 <Modal.Title>Back-end</Modal.Title>
                             </Modal.Header>
-                            <Modal.Body>Test modal</Modal.Body>
+                            <Modal.Body>
+                                <ul>
+                                    <li>Database design and implementation</li><br />
+                                    <li>SQL schema design and normalization</li><br />
+                                    <li>NoSQL optimization</li>
+                                </ul>
+                            </Modal.Body>
                         </Modal>
                     </Col>
                 </Row>

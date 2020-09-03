@@ -11,7 +11,7 @@ import { Element, animateScroll as scroll } from 'react-scroll'
 // CSS.
 import "../css/global.scss"
 
-export default function index() {
+const index = () => {
 
   const scrollToTop = () => {
     scroll.scrollToTop();
@@ -25,8 +25,11 @@ export default function index() {
       document.getElementById("scroll-to-top").style.display = "block"
     }
   }
-  window.addEventListener('scroll', windowScrolled)
-  setTimeout(() => windowScrolled(), 50)
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', windowScrolled)
+    setTimeout(() => windowScrolled(), 50)
+  }, [])
 
   return (
     <React.Fragment>
@@ -51,3 +54,5 @@ export default function index() {
     </React.Fragment>
   )
 }
+
+export default index
