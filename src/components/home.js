@@ -33,7 +33,7 @@ export default function Home() {
                     <br /><br />
                     Serverless architecture as the design goal whenever possible.
                     <br /><br />
-                    Your idea translated to technical specifications and implemented using cutting edge technology.
+                    Your idea translated to technical specifications and implemented using the right technology.
                     </p></Col>
                 </Row>
                 <br />

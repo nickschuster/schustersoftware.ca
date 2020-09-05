@@ -20,9 +20,6 @@ export default function Header() {
                     <Link className="navbar-link" to="home" spy={true} smooth={true}>Home</Link>
                 </Col>
                 <Col lg={2} xl={1} className="text-center">
-                    <Link className="navbar-link disabled-link" to="highlights" spy={true} smooth={true}>Highlights</Link>
-                </Col>
-                <Col lg={2} xl={1} className="text-center">
                     <Link className="navbar-link" to="contact" spy={true} smooth={true}>Contact</Link>
                 </Col>
                 <Col lg={2} xl={1} className="text-center">
