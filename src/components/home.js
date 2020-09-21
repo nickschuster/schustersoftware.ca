@@ -25,11 +25,11 @@ export default function Home() {
         <React.Fragment>
             <Container fluid>
                 <Row className="justify-content-center">
-                    <Col className="text-center mx-auto" xs={12}><h1 className="page-title">Full-stack Web Development</h1><br /></Col>
+                    <Col className="text-center mx-auto" xs={12}><h1 className="page-title">Full-stack Development</h1><br /></Col>
                 </Row>
                 <Row className="justify-content-center">
                     <Col className="text-center"><p id="intro-blurb">
-                    Cloud leveraged web applications designed and developed front-to-back. 
+                    Cloud leveraged applications designed and developed front-to-back. 
                     <br /><br />
                     Serverless architecture as the design goal whenever possible.
                     <br /><br />
