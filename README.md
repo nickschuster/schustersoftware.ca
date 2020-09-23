@@ -1,3 +1,3 @@
-### Schuster Development Website
+### Schuster Software Website
 
 Created using GatsbyJS
