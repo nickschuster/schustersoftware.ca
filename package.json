@@ -1,8 +1,8 @@
 {
-  "name": "schusterdevelopment.ca",
+  "name": "schustersoftware.ca",
   "private": true,
-  "description": "The schusterdevelopment.ca webpage",
-  "version": "1.0.0",
+  "description": "The schustersoftware.ca webpage",
+  "version": "2.0.1",
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
@@ -12,7 +12,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "aws s3 sync public/ s3://schusterdevelopment.ca"
+    "deploy": "aws s3 sync public/ s3://schustersoftware.ca"
   },
   "dependencies": {
     "bootstrap": "^4.5.2",
@@ -34,6 +34,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nickschuster/schusterdevelopment.ca.git"
+    "url": "https://github.com/nickschuster/schustersoftware.ca.git"
   }
 }
