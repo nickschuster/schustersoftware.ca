@@ -22,9 +22,13 @@
     margin-right: auto;
     padding: 20px;
     color: white;
-    text-decoration-color: #0076ff;
     text-shadow: 5px 5px 50px black;
+    text-decoration: none !important;
     cursor: pointer;
+}
+
+.navbar-link:hover {
+    color: #0076ff !important;
 }
 
 .disabled-link {

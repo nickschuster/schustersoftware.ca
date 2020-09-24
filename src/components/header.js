@@ -22,9 +22,6 @@ export default function Header() {
                 <Col lg={2} xl={1} className="text-center">
                     <Link className="navbar-link" to="contact" spy={true} smooth={true}>Contact</Link>
                 </Col>
-                <Col lg={2} xl={1} className="text-center">
-                    <Link className="navbar-link" to="links" spy={true} smooth={true}>Links</Link>
-                </Col>
             </Row>
             <br />
             <hr id="header-break"/>
