@@ -2,21 +2,23 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Schuster Development - Full-stack Web Development",
-    description: "Cloud leveraged web applications designed and developed front-to-back. Serverless architecture as the design goal whenever possible. Your idea translated to technical specifications and implemented using cutting edge technology.",
+    title: "Schuster Development - Full-stack Development",
+    description: "Cloud leveraged applications designed and developed front-to-back. Serverless architecture as the design goal whenever possible. Your idea translated to technical specifications and implemented using cutting edge technology.",
     author: "Schuster Development"
   },
   plugins: [
     "gatsby-plugin-sass", 
     {
-      resolve: "gatsby-plugin-prefetch-google-fonts",
+      resolve: "gatsby-plugin-webfonts",
       options: {
-        fonts: [
-          {
-            family: "Noto Sans JP",
-            variants: ['400', '700']
-          }
-        ]
+        fonts: {
+          google: [
+            {
+              family: "Noto Sans JP",
+              variants: ['400', '700']
+            }
+          ]
+        }
       }
     },
     {
