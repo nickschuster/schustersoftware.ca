@@ -6,6 +6,7 @@ import { Projects } from "../components/Projects"
 import { Contact } from "../components/Contact"
 
 import "../css/global.scss"
+import { Container } from "react-bootstrap"
 
 const Index = () => {
   const [page, setPage] = useState(Pages.projects)
@@ -21,8 +22,8 @@ const Index = () => {
 
   return (
     <>
-      <Header />
-      {getCurrentPage()}
+      <Header setPage={setPage} />
+      <Container>{getCurrentPage()}</Container>
       <Footer />
     </>
   )

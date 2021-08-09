@@ -1,5 +1,9 @@
 import React from "react"
 
 export const Projects = () => {
-  return <></>
+  return (
+    <>
+      <h1>Projects</h1>
+    </>
+  )
 }
