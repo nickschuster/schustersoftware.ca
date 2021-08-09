@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Helmet } from "react-helmet"
 import { Pages } from "../components/Pages"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
@@ -22,6 +23,13 @@ const Index = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Schuster Software - Full-stack Development</title>
+        <meta
+          name="description"
+          content="Full-stack development with a focus on serverless design."
+        />
+      </Helmet>
       <Header setPage={setPage} />
       <Container>{getCurrentPage()}</Container>
       <Footer />

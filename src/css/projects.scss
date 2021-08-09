@@ -1,0 +1,36 @@
+.project-container {
+  padding: 20px;
+}
+
+.projects-title {
+  text-align: center;
+}
+
+.project {
+  height: 240px;
+  overflow-y: hidden;
+}
+
+.project-text {
+  height: 100%;
+  width: calc(100% - 240px);
+  float: right;
+  margin-top: 20px;
+  overflow-y: scroll;
+}
+
+.project-logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  font-size: 175px;
+  line-height: 1;
+  text-align: center;
+  margin: 20px;
+  display: block;
+  float: left;
+}
+
+.no-image-available {
+  border: 1px solid black;
+}
