@@ -1,38 +1,31 @@
-// Controls the entire website.
+import React, { useState } from "react"
+import { Pages } from "../components/Pages"
+import { Header } from "../components/Header"
+import { Footer } from "../components/Footer"
+import { Projects } from "../components/Projects"
+import { Contact } from "../components/Contact"
 
-// Packages.
-import React from "react"
-import Header from "../components/header"
-import Home from "../components/home"
-import Contact from "../components/contact"
-import Footer from "../components/footer"
-import { Element } from 'react-scroll'
-
-// CSS.
 import "../css/global.scss"
 
-const index = () => {
+const Index = () => {
+  const [page, setPage] = useState(Pages.projects)
+
+  // Return the page to be displayed.
+  const getCurrentPage = () => {
+    if (page === Pages.projects) {
+      return <Projects />
+    } else if (page === Pages.contact) {
+      return <Contact />
+    }
+  }
+
   return (
-    <React.Fragment>
-      <div id="background">
-        <div id="content-container">
-          <Element name="home">
-            <Header /> 
-            <Home />
-          </Element>
-          <Element name="contact">
-            <Contact />
-          </Element>
-          <div id="push-footer"></div>
-        </div>
-      </div> 
-      <div id="footer">
-        <Element name="links">
-          <Footer />
-        </Element>
-      </div>
-    </React.Fragment>
+    <>
+      <Header />
+      {getCurrentPage()}
+      <Footer />
+    </>
   )
 }
 
-export default index
+export default Index

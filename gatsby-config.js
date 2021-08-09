@@ -2,41 +2,42 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Schuster Development - Full-stack Development",
-    description: "Cloud leveraged applications designed and developed front-to-back. Serverless architecture as the design goal whenever possible. Your idea translated to technical specifications and implemented using cutting edge technology.",
-    author: "Schuster Development"
+    title: "Schuster Software - Full-stack Development",
+    description:
+      "Cloud leveraged applications designed and developed front-to-back. Serverless architecture as the design goal whenever possible. Your idea translated to technical specifications and implemented using the right technology.",
+    author: "Schuster Software",
   },
   plugins: [
-    "gatsby-plugin-sass", 
+    "gatsby-plugin-sass",
     {
       resolve: "gatsby-plugin-webfonts",
       options: {
         fonts: {
           google: [
             {
-              family: "Noto Sans JP",
-              variants: ['400', '700']
-            }
-          ]
-        }
-      }
+              family: "Ubuntu",
+              variants: ["400", "700"],
+            },
+          ],
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Schuster Development`,
-        short_name: `Schuster Development`,
+        name: `Schuster Software`,
+        short_name: `Schuster Software`,
         start_url: `/`,
-        background_color: `#5c5c5c`,
-        theme_color: `#0076ff`,
+        background_color: `#ffffff`,
+        theme_color: `#ffffff`,
         display: `standalone`,
         icon: `src/images/icon.png`,
         icon_options: {
           purpose: `maskable`,
-        }
+        },
       },
     },
     "gatsby-plugin-offline",
-    "gatsby-plugin-react-helmet"
-  ]
+    "gatsby-plugin-react-helmet",
+  ],
 }
