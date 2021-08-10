@@ -34,3 +34,23 @@
 .no-image-available {
   border: 1px solid black;
 }
+
+.project-tech {
+  padding-left: 5em;
+}
+
+@media only screen and (max-width: 600px) {
+  .project-text {
+    float: none;
+    width: 100%;
+  }
+
+  .project-logo {
+    float: none;
+    text-align: center;
+  }
+
+  .project {
+    height: auto;
+  }
+}

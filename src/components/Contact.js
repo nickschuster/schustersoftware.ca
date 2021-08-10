@@ -6,7 +6,7 @@ export const Contact = () => {
   return (
     <>
       <div className="contact-container">
-        <h1>nick@schustersoftware.ca</h1>
+        <h1 className="contact-email">nick@schustersoftware.ca</h1>
         <h1>(250) 213 2918</h1>
         <a href="https://www.github.com/nickschuster">
           <img

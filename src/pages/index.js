@@ -5,6 +5,7 @@ import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import { Projects } from "../components/Projects"
 import { Contact } from "../components/Contact"
+import Logo from "../images/icon.png"
 
 import "../css/global.scss"
 import { Container } from "react-bootstrap"
@@ -29,6 +30,7 @@ const Index = () => {
           name="description"
           content="Full-stack development with a focus on serverless design."
         />
+        <link rel="shortcut icon" type="image/jpg" href={Logo} />
       </Helmet>
       <Header setPage={setPage} />
       <Container>{getCurrentPage()}</Container>

@@ -1,4 +1,5 @@
 import React from "react"
+import VWLogo from "../images/vw.png"
 
 import "../css/projects.scss"
 
@@ -22,12 +23,10 @@ export const Projects = () => {
 
             <p>Designed and developed Satiate using React and AWS Amplify.</p>
             <p>Technology: </p>
-            <li>
-              <ul>
-                React, Material UI, AWS Amplify, AWS AppSync, AWS Lambda, AWS
-                Cognito
-              </ul>
-            </li>
+            <p className="project-tech">
+              React, Material UI, AWS Amplify, AWS AppSync, AWS Lambda, AWS
+              Cognito
+            </p>
           </div>
         </div>
         <div className="project">
@@ -40,9 +39,7 @@ export const Projects = () => {
               using .NET Core.
             </p>
             <p>Technology: </p>
-            <li>
-              <ul>Unity, C#, GCP Auth, .NET Core</ul>
-            </li>
+            <p className="project-tech">Unity, C#, GCP Auth, .NET Core</p>
           </div>
         </div>
         <div className="project">
@@ -55,9 +52,7 @@ export const Projects = () => {
               Material UI.
             </p>
             <p>Technology: </p>
-            <li>
-              <ul>Vue, Vuex, Vuetify, Material UI</ul>
-            </li>
+            <p className="project-tech">Vue, Vuex, Vuetify, Material UI</p>
           </div>
         </div>
         <div className="project">
@@ -70,16 +65,11 @@ export const Projects = () => {
               billing and invoice management.
             </p>
             <p>Technology: </p>
-            <li>
-              <ul>Apollo GraphQL, GCP CloudRun, Stripe</ul>
-            </li>
+            <p className="project-tech">Apollo GraphQL, GCP CloudRun, Stripe</p>
           </div>
         </div>
         <div className="project">
-          <img
-            className="project-logo"
-            src="http://www.virtual-whiteboard.ca/icons/icon-512x512.png"
-          />
+          <img className="project-logo" src={VWLogo} />
           <div className="project-text">
             <h1>Virtual Whiteboard</h1>
             <a href="https://www.virtual-whiteboard.ca">Website</a>
@@ -92,11 +82,9 @@ export const Projects = () => {
               Fargate.
             </p>
             <p>Technology: </p>
-            <li>
-              <ul>
-                JQuery, Socket.IO, AWS Fargate, AWS API Gateway, AWS Lambda
-              </ul>
-            </li>
+            <p className="project-tech">
+              JQuery, Socket.IO, AWS Fargate, AWS API Gateway, AWS Lambda
+            </p>
           </div>
         </div>
         <div className="project">
@@ -106,11 +94,9 @@ export const Projects = () => {
             <a href="https://www.github.com/nickschuster/Quench">Github</a>
             <p>Designed and developed Quench the android app in Java.</p>
             <p>Technology: </p>
-            <li>
-              <ul>
-                Android, Java, Firebase Auth, GCP AdMobb, Firebase Firestore
-              </ul>
-            </li>
+            <p className="project-tech">
+              Android, Java, Firebase Auth, GCP AdMobb, Firebase Firestore
+            </p>
           </div>
         </div>
       </div>
