@@ -15,7 +15,7 @@ export const Projects = () => {
             src="https://www.satiate.app/icons/icon-512x512.png"
           />
           <div className="project-text">
-            <h1>Satiate (WIP)</h1>
+            <h1>Satiate</h1>
 
             <a href="https://www.satiate.app">Website</a>
             {" - "}
