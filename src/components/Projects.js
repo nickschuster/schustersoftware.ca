@@ -30,7 +30,7 @@ export const Projects = () => {
           </div>
         </div>
         <div className="project">
-          <div className="no-image-available project-logo">C</div>
+          <div className="project-logo">C</div>
 
           <div className="project-text">
             <h1>Contagion Entertainment</h1>
@@ -43,7 +43,7 @@ export const Projects = () => {
           </div>
         </div>
         <div className="project">
-          <div className="no-image-available project-logo">S</div>
+          <div className="project-logo">S</div>
 
           <div className="project-text">
             <h1>Sentry Health - User Portal</h1>
@@ -56,7 +56,7 @@ export const Projects = () => {
           </div>
         </div>
         <div className="project">
-          <div className="no-image-available project-logo">S</div>
+          <div className="project-logo">S</div>
 
           <div className="project-text">
             <h1>Sentry Health - Billing API</h1>
@@ -88,7 +88,7 @@ export const Projects = () => {
           </div>
         </div>
         <div className="project">
-          <div className="no-image-available project-logo">Q</div>
+          <div className="project-logo">Q</div>
           <div className="project-text">
             <h1>Quench</h1>
             <a href="https://www.github.com/nickschuster/Quench">Github</a>

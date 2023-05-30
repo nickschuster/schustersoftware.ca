@@ -25,7 +25,7 @@ export const Header = ({ setPage }) => {
             className="justify-content-end"
             id="responsive-navbar-nav"
           >
-            <Nav className="me-auto">
+            <Nav className="ml-auto">
               <Nav.Link onClick={() => setPage(Pages.projects)}>
                 Projects
               </Nav.Link>

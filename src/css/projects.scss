@@ -16,7 +16,7 @@
   width: calc(100% - 240px);
   float: right;
   margin-top: 20px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .project-logo {
@@ -29,9 +29,6 @@
   margin: 20px;
   display: block;
   float: left;
-}
-
-.no-image-available {
   border: 1px solid black;
 }
 

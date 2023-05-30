@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <>
       <div className="footer">
-        <p>2021 &copy; Schuster Software</p>
+        <p>2023 &copy; Schuster Software</p>
       </div>
     </>
   )
