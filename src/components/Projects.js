@@ -1,5 +1,9 @@
 import React from "react"
 import VWLogo from "../images/vw.png"
+import BSLogo from "../images/bs.png"
+import NMLogo from "../images/nmb.png"
+import QLogo from "../images/q.png"
+import SLogo from "../images/s.png"
 
 import "../css/projects.scss"
 
@@ -10,16 +14,13 @@ export const Projects = () => {
         <h1 className="projects-title">Projects</h1>
 
         <div className="project">
-          <img
-            className="project-logo"
-            src="https://www.satiate.app/icons/icon-512x512.png"
-          />
+          <img className="project-logo" src={SLogo} />
           <div className="project-text">
             <h1>Satiate</h1>
 
-            <a href="https://www.satiate.app">Website</a>
-            {" - "}
             <a href="https://www.github.com/nickschuster/Satiate">Github</a>
+            {" - "}
+            <a href="https://www.satiate.app">Website</a>
 
             <p>Designed and developed Satiate using React and AWS Amplify.</p>
             <p>Technology: </p>
@@ -29,54 +30,17 @@ export const Projects = () => {
             </p>
           </div>
         </div>
-        <div className="project">
-          <div className="project-logo">C</div>
 
-          <div className="project-text">
-            <h1>Contagion Entertainment</h1>
-            <p>
-              Built and integrated GCP based authentication into a unity client
-              using .NET Core.
-            </p>
-            <p>Technology: </p>
-            <p className="project-tech">Unity, C#, GCP Auth, .NET Core</p>
-          </div>
-        </div>
-        <div className="project">
-          <div className="project-logo">S</div>
-
-          <div className="project-text">
-            <h1>Sentry Health - User Portal</h1>
-            <p>
-              Built the Sentry Health user portal in Vue using Vuetify, Vuex and
-              Material UI.
-            </p>
-            <p>Technology: </p>
-            <p className="project-tech">Vue, Vuex, Vuetify, Material UI</p>
-          </div>
-        </div>
-        <div className="project">
-          <div className="project-logo">S</div>
-
-          <div className="project-text">
-            <h1>Sentry Health - Billing API</h1>
-            <p>
-              Developed a billing microservice to interface with Stripe for
-              billing and invoice management.
-            </p>
-            <p>Technology: </p>
-            <p className="project-tech">Apollo GraphQL, GCP CloudRun, Stripe</p>
-          </div>
-        </div>
         <div className="project">
           <img className="project-logo" src={VWLogo} />
           <div className="project-text">
             <h1>Virtual Whiteboard</h1>
-            <a href="https://www.virtual-whiteboard.ca">Website</a>
-            {" - "}
             <a href="https://www.github.com/nickschuster/Virtual-Whiteboard-Client">
               Github
             </a>
+            {" - "}
+            <a href="https://www.virtual-whiteboard.ca">Website</a>
+
             <p>
               Designed and developed Virtual Whiteboard using JQuery and AWS
               Fargate.
@@ -87,16 +51,59 @@ export const Projects = () => {
             </p>
           </div>
         </div>
+
         <div className="project">
-          <div className="project-logo">Q</div>
+          <img className="project-logo" src={QLogo} />
           <div className="project-text">
             <h1>Quench</h1>
             <a href="https://www.github.com/nickschuster/Quench">Github</a>
+            {" - "}
+            <a href="https://play.google.com/store/apps/details?id=com.quench">
+              Website
+            </a>
             <p>Designed and developed Quench the android app in Java.</p>
             <p>Technology: </p>
             <p className="project-tech">
               Android, Java, Firebase Auth, GCP AdMobb, Firebase Firestore
             </p>
+          </div>
+        </div>
+
+        <div className="project">
+          <img className="project-logo" src={NMLogo} />
+          <div className="project-text">
+            <h1>Nine Mens Morris</h1>
+            <a href="https://www.github.com/nickschuster/nine-mens-morris">
+              Github
+            </a>
+            {" - "}
+            <a href="https://en.wikipedia.org/wiki/Nine_men%27s_morris">
+              Website
+            </a>
+            <p>
+              Recreated the lesser known board game Nine Mens Morris in python,
+              including a networked multiplayer mode.
+            </p>
+            <p>Technology: </p>
+            <p className="project-tech">Python, PyGame, Sockets/Networking</p>
+          </div>
+        </div>
+
+        <div className="project">
+          <img className="project-logo" src={BSLogo} />
+          <div className="project-text">
+            <h1>Battle Snake 2022</h1>
+            <a href="https://github.com/nickschuster/battlesnake-2020">
+              Github
+            </a>
+            {" - "}
+            <a href="https://play.battlesnake.com/">Website</a>
+            <p>
+              Developed a novel snake strategy for Battle Snake 2022 using
+              hamiltonian cycles. Written in Python.
+            </p>
+            <p>Technology: </p>
+            <p className="project-tech">Python</p>
           </div>
         </div>
       </div>
