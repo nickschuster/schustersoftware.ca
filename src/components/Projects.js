@@ -18,7 +18,7 @@ export const Projects = () => {
           <div className="project-text">
             <h1>Satiate</h1>
 
-            <a href="https://www.github.com/nickschuster/Satiate">Github</a>
+            <a href="https://www.github.com/nickschuster/satiate">Github</a>
             {" - "}
             <a href="https://www.satiate.app">Website</a>
 
@@ -35,11 +35,11 @@ export const Projects = () => {
           <img className="project-logo" src={VWLogo} />
           <div className="project-text">
             <h1>Virtual Whiteboard</h1>
-            <a href="https://www.github.com/nickschuster/Virtual-Whiteboard-Client">
+            <a href="https://www.github.com/nickschuster/virtual-whiteboard-client">
               Github
             </a>
             {" - "}
-            <a href="https://www.virtual-whiteboard.ca">Website</a>
+            <a href="http://www.virtual-whiteboard.ca">Website</a>
 
             <p>
               Designed and developed Virtual Whiteboard using JQuery and AWS
@@ -56,7 +56,7 @@ export const Projects = () => {
           <img className="project-logo" src={QLogo} />
           <div className="project-text">
             <h1>Quench</h1>
-            <a href="https://www.github.com/nickschuster/Quench">Github</a>
+            <a href="https://www.github.com/nickschuster/quench">Github</a>
             {" - "}
             <a href="https://play.google.com/store/apps/details?id=com.quench">
               Website
