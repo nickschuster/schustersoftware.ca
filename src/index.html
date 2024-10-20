@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="images/icon.png" />
+  <title>Nick - Software Developer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #000;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    p.tagline {
+      font-size: 1.2rem;
+      margin-top: 5px;
+      color: #555;
+    }
+
+    section.projects {
+      width: 90%;
+      max-width: 600px;
+      margin: 40px auto;
+    }
+
+    .project {
+      border-bottom: 1px solid #ddd;
+      padding: 20px 0;
+      display: none;
+      align-items: center;
+    }
+
+    .project.visible {
+      display: flex;
+    }
+
+    .project:last-child {
+      border-bottom: none;
+    }
+
+    .project img {
+      max-width: 60px;
+      max-height: 60px;
+      margin-right: 20px;
+      border-radius: 5px;
+    }
+
+    .project-content a {
+      display: block;
+      margin-top: 10px;
+    }
+
+    .project-content {
+      flex-grow: 1;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin: 0 0 10px;
+    }
+
+    p {
+      margin: 5px 0;
+      color: #666;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .technologies {
+      margin-top: 10px;
+    }
+
+    .technologies span {
+      background-color: #000;
+      color: #fff;
+      padding: 3px 8px;
+      font-size: 0.9rem;
+      border-radius: 5px;
+      margin-right: 5px;
+      display: inline-block;
+    }
+
+    .show-more {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer {
+      margin-top: 40px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer span {
+      color: #666;
+      display: block;
+      margin: 5px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p.tagline {
+        font-size: 1rem;
+      }
+
+      .project {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .project img {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Hi, I'm Nick</h1>
+    <p class="tagline">Software Developer</p>
+  </header>
+
+  <section class="projects">
+    <div class="project visible">
+      <img src="images/s.png" alt="Satiate Logo" />
+      <div class="project-content">
+        <h2>Satiate</h2>
+        <p>A calorie tracking app built with React hosted and powered by AWS</p>
+        <div class="technologies">
+          <strong>Technologies:</strong>
+          <span>AWS</span> <span>React</span> <span>Material UI</span>
+        </div>
+        <a href="https://github.com/nickschuster/satiate" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+    <div class="project visible">
+      <img src="images/vw.png" alt="Virtual Whiteboard Logo" />
+      <div class="project-content">
+        <h2>Virtual Whiteboard</h2>
+        <p>Container orchestrated whiteboard app that scales from 0 to Infinity</p>
+        <div class="technologies">
+          <strong>Technologies:</strong>
+          <span>AWS</span> <span>JQuery</span> <span>Socket.IO</span>
+        </div>
+        <a href="https://github.com/nickschuster/virtual-whiteboard-client" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+    <div class="project visible">
+      <img src="images/q.png" alt="Quench Logo" />
+      <div class="project-content">
+        <h2>Quench</h2>
+        <p>Water tracking Android app.</p>
+        <div class="technologies">
+          <strong>Technologies:</strong>
+          <span>GCP</span> <span>Firebase</span> <span>Java</span>
+        </div>
+        <a href="https://github.com/nickschuster/quench" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+    <div class="project">
+      <img src="images/nmb.png" alt="Nine Mens Morris Logo" />
+      <div class="project-content">
+        <h2>Nine Mens Morris</h2>
+        <p>Networked re-creation of the popular board game.</p>
+        <div class="technologies">
+          <strong>Technologies:</strong>
+          <span>Python</span> <span>PyGame</span>
+        </div>
+        <a href="https://github.com/nickschuster/nine-mens-morris" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+    <div class="project">
+      <img src="images/bs.png" alt="BattleSnake Logo" />
+      <div class="project-content">
+        <h2>Battle Snake</h2>
+        <p>Battle Snake 2020 competitor and top 6 finisher in open division</p>
+        <div class="technologies">
+          <strong>Technologies:</strong>
+          <span>Python</span>
+        </div>
+        <a href="https://github.com/project5" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <button class="show-more" onclick="showMore()">Show More</button>
+
+  <footer>
+    <div>
+      <a href="mailto:nick@schustersoftware.ca">Email</a> |
+      <a href="https://github.com/nickschuster" target="_blank">GitHub</a> |
+      <a href="https://www.linkedin.com/in/nikolas-schuster-25184b16b/" target="_blank">LinkedIn</a>
+    </div>
+    <span id="copy"></span>
+  </footer>
+
+  <script>
+    window.onload = function () {
+      const copy = document.getElementById("copy");
+      const year = new Date().getFullYear();
+      copy.textContent = `© ${year} Schuster Software`;
+    };
+
+    function showMore() {
+      const hiddenProjects = document.querySelectorAll(
+        ".project:not(.visible)"
+      );
+      hiddenProjects.forEach(function (project) {
+        project.classList.add("visible");
+      });
+      document.querySelector(".show-more").style.display = "none";
+    }
+  </script>
+</body>
+
+</html>
