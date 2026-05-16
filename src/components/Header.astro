@@ -1,0 +1,100 @@
+---
+
+---
+
+<header
+  class="sticky top-0 z-50 w-full border-b border-zinc-200/80 dark:border-zinc-800/80 bg-white/70 dark:bg-[#09090b]/70 backdrop-blur-xl supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-[#09090b]/60 transition-colors duration-300"
+>
+  <nav
+    class="flex items-center justify-between max-w-6xl mx-auto px-4 py-4"
+  >
+    <a href="/" class="flex items-center gap-2 group">
+      <div class="w-8 h-8 bg-zinc-900 dark:bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+        <span class="text-white dark:text-zinc-900 font-bold text-lg leading-none">S</span>
+      </div>
+      <span class="text-xl font-bold tracking-tight text-zinc-900 dark:text-white group-hover:opacity-70 transition-opacity">
+        Schuster
+      </span>
+    </a>
+
+    <div class="flex items-center gap-6">
+      <a
+        href="/#products"
+        class="text-sm font-semibold text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors"
+      >
+        Products
+      </a>
+      <a
+        href="/contact"
+        class="text-sm font-semibold text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors hidden sm:block"
+      >
+        Contact
+      </a>
+
+      <div class="w-px h-4 bg-zinc-300 dark:bg-zinc-700 mx-2"></div>
+
+      <button
+        id="theme-toggle"
+        class="p-2 rounded-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-white"
+        aria-label="Toggle theme"
+      >
+        <svg
+          id="sun-icon"
+          class="w-4 h-4 hidden"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <svg
+          id="moon-icon"
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const themeToggle = document.getElementById("theme-toggle");
+  const sunIcon = document.getElementById("sun-icon");
+  const moonIcon = document.getElementById("moon-icon");
+  const html = document.documentElement;
+
+  function updateThemeUI() {
+    const isDark = html.classList.contains("dark");
+    if (isDark) {
+      sunIcon?.classList.remove("hidden");
+      moonIcon?.classList.add("hidden");
+    } else {
+      sunIcon?.classList.add("hidden");
+      moonIcon?.classList.remove("hidden");
+    }
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const isDark = html.classList.contains("dark");
+
+      if (isDark) {
+        html.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+      } else {
+        html.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      }
+
+      updateThemeUI();
+    });
+  }
+
+  updateThemeUI();
+</script>

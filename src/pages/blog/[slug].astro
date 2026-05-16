@@ -1,0 +1,160 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { blogPosts } from "../../data/blog.ts";
+
+export async function getStaticPaths() {
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: (typeof blogPosts)[0];
+}
+
+const { post } = Astro.props;
+
+const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Layout>
+  <Header />
+  <main class="min-h-screen flex flex-col">
+    <article class="flex-grow py-16 md:py-24 px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8 animate-fadeIn">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">{post.title}</h1>
+          <div
+            class="flex items-center justify-between text-gray-600 dark:text-gray-400"
+          >
+            <div>
+              <span class="font-semibold">{post.author}</span>
+              <span class="mx-2">·</span>
+              <time>{formattedDate}</time>
+            </div>
+            <div class="flex gap-2 flex-wrap justify-end">
+              {
+                post.tags.map((tag) => (
+                  <span class="text-xs font-medium px-2 py-1 rounded bg-gray-200 dark:bg-neutral-700">
+                    {tag}
+                  </span>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="max-w-none space-y-4 text-gray-800 dark:text-gray-100 animate-slideUp prose-content"
+        >
+          <Fragment set:html={post.content} />
+        </div>
+
+        <div
+          class="mt-12 pt-8 border-t border-gray-200 dark:border-neutral-800"
+        >
+          <a href="/blog" class="prose-link"> ← Back to all posts </a>
+        </div>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  :global(.prose-content h1) {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  :global(.prose-content h2) {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  :global(.prose-content h3) {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  :global(.prose-content p) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.625;
+  }
+
+  :global(.prose-content code) {
+    background-color: rgb(243, 244, 246);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-family: monospace;
+    font-size: 0.875rem;
+  }
+
+  :global(.dark .prose-content code) {
+    background-color: rgb(23, 23, 23);
+  }
+
+  :global(.prose-content pre) {
+    background-color: rgb(243, 244, 246);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  :global(.dark .prose-content pre) {
+    background-color: rgb(23, 23, 23);
+  }
+
+  :global(.prose-content pre code) {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  :global(.prose-content blockquote) {
+    border-left: 4px solid rgb(209, 213, 219);
+    padding-left: 1rem;
+    font-style: italic;
+    color: rgb(75, 85, 99);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  :global(.dark .prose-content blockquote) {
+    border-left-color: rgb(55, 65, 81);
+    color: rgb(156, 163, 175);
+  }
+
+  :global(.prose-content ul) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1.5rem;
+    list-style-type: disc;
+  }
+
+  :global(.prose-content ol) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1.5rem;
+    list-style-type: decimal;
+  }
+
+  :global(.prose-content li) {
+    margin-top: 0.5rem;
+  }
+</style>

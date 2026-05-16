@@ -1,0 +1,66 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ContactForm from "../components/ContactForm.astro";
+---
+
+<Layout>
+  <Header />
+  <main class="min-h-screen flex flex-col">
+    <section class="flex-grow py-24 md:py-32 px-4 relative">
+      <!-- Subtle background decoration -->
+      <div class="absolute inset-0 z-0 pointer-events-none flex items-center justify-center opacity-30 dark:opacity-20 overflow-hidden">
+        <div class="w-[600px] h-[600px] bg-gradient-to-tr from-zinc-200 to-transparent dark:from-zinc-800 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-overlay -translate-y-1/2"></div>
+      </div>
+
+      <div class="max-w-2xl mx-auto relative z-10">
+        <div class="mb-12 text-center animate-fadeIn">
+          <h1 class="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight text-zinc-900 dark:text-white">Get in Touch</h1>
+          <p class="text-xl text-zinc-600 dark:text-zinc-400 font-medium">
+            Have a question or want to collaborate? I'd love to hear from you.
+          </p>
+        </div>
+
+        <ContactForm />
+
+        <div
+          class="mt-20 pt-12 border-t border-zinc-200 dark:border-zinc-800 animate-slideUp"
+          style="animation-delay: 0.2s;"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+              <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 mb-2">Email</h3>
+              <a href="mailto:nick@schustersoftware.ca" class="prose-link">
+                nick@schustersoftware.ca
+              </a>
+            </div>
+            <div>
+              <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 mb-2">GitHub</h3>
+              <a
+                href="https://github.com/nickschuster"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="prose-link"
+              >
+                github.com/nickschuster
+              </a>
+            </div>
+            <div>
+              <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 mb-2">LinkedIn</h3>
+              <a
+                href="https://www.linkedin.com/in/nikolas-schuster-25184b16b/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="prose-link"
+              >
+                nikolas-schuster
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

@@ -1,1 +1,68 @@
 @import "tailwindcss";
+
+@layer base {
+  html {
+    @apply antialiased scroll-smooth;
+  }
+
+  body {
+    @apply bg-[#fafafa] text-zinc-900 dark:bg-[#09090b] dark:text-zinc-50 transition-colors duration-500 selection:bg-zinc-900 selection:text-white dark:selection:bg-white dark:selection:text-zinc-900;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .prose-link {
+    @apply text-zinc-900 dark:text-white font-medium hover:text-zinc-500 dark:hover:text-zinc-400 transition-colors underline decoration-zinc-300 dark:decoration-zinc-700 underline-offset-4 hover:decoration-zinc-500 dark:hover:decoration-zinc-400;
+  }
+
+  .tech-tag {
+    @apply bg-zinc-100 dark:bg-zinc-800/50 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700/50 px-2.5 py-1 rounded-md text-xs font-medium inline-block mr-2 mb-2 backdrop-blur-sm;
+  }
+
+  .card-container {
+    @apply bg-white/80 dark:bg-zinc-900/60 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-black/50 transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-900 px-6 py-2.5 rounded-lg font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-2 dark:focus:ring-white dark:focus:ring-offset-zinc-900;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center bg-transparent border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-50 px-6 py-2.5 rounded-lg font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-2 dark:focus:ring-white dark:focus:ring-offset-zinc-900;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 text-zinc-900 dark:text-zinc-50 placeholder-zinc-400 dark:placeholder-zinc-500 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-white transition-all shadow-sm;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .5; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

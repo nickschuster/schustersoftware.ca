@@ -1,0 +1,87 @@
+---
+
+---
+
+<div class="mb-8 max-w-2xl mx-auto">
+  <input
+    type="text"
+    id="search-input"
+    placeholder="Search apps by name, features, or category..."
+    class="w-full px-4 py-3 rounded border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-black dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all"
+  />
+</div>
+
+<script>
+  let debounceTimer: ReturnType<typeof setTimeout> | null = null;
+  const searchInput = document.getElementById(
+    "search-input",
+  ) as HTMLInputElement;
+  const productGrid = document.getElementById("product-grid") as HTMLDivElement;
+  const noResults = document.getElementById("no-results") as HTMLDivElement;
+
+  function performSearch(query: string) {
+    const lowerQuery = query.toLowerCase().trim();
+
+    if (!lowerQuery) {
+      // Show all products
+      const allCards = productGrid?.querySelectorAll("[data-product-id]");
+      allCards?.forEach((card) => {
+        (card as HTMLElement).style.display = "";
+        (card as HTMLElement).classList.add("animate-fadeIn");
+      });
+      if (noResults) noResults.classList.add("hidden");
+      return;
+    }
+
+    // Get all product cards
+    const cards = productGrid?.querySelectorAll(
+      "[data-product-id]",
+    ) as NodeListOf<HTMLElement>;
+    let visibleCount = 0;
+
+    cards?.forEach((card) => {
+      const title = card.getAttribute("data-title")?.toLowerCase() || "";
+      const description =
+        card.getAttribute("data-description")?.toLowerCase() || "";
+      const features = card.getAttribute("data-features")?.toLowerCase() || "";
+      const category = card.getAttribute("data-category")?.toLowerCase() || "";
+
+      const matches =
+        title.includes(lowerQuery) ||
+        description.includes(lowerQuery) ||
+        features.includes(lowerQuery) ||
+        category.includes(lowerQuery);
+
+      if (matches) {
+        card.style.display = "";
+        card.classList.add("animate-fadeIn");
+        visibleCount++;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    // Show/hide no results message
+    if (noResults) {
+      if (visibleCount === 0) {
+        noResults.classList.remove("hidden");
+      } else {
+        noResults.classList.add("hidden");
+      }
+    }
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      const query = (e.target as HTMLInputElement).value;
+
+      // Clear existing timer
+      if (debounceTimer) clearTimeout(debounceTimer);
+
+      // Set new timer for debounced search
+      debounceTimer = setTimeout(() => {
+        performSearch(query);
+      }, 300);
+    });
+  }
+</script>

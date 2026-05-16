@@ -1,25 +1,58 @@
+---
+import "../styles/global.css";
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Schuster Software - Smart tools for everyday life. Health tracking, productivity apps, and more."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>Schuster Software</title>
+    <script is:inline>
+      const theme = localStorage.getItem("theme") || "light";
+      if (
+        theme === "dark" ||
+        (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+  </head>
+  <body class="transition-colors duration-300">
+    <slot />
+  </body>
 </html>
 
 <style>
-	import '../styles/global.css' 
+  html {
+    background-color: white;
+    color: black;
+  }
 
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html.dark {
+    background-color: black;
+    color: white;
+  }
+
+  body {
+    margin: 0;
+    width: 100%;
+    font-family: "Inter", system-ui, sans-serif;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+  }
 </style>
