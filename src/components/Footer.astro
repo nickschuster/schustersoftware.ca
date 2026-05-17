@@ -1,5 +1,6 @@
 ---
-import { getCurrentYear } from "../utils/date.ts";
+import { getCurrentYear } from "../utils/date";
+import Logo from "./Logo.astro";
 ---
 
 <footer
@@ -9,20 +10,23 @@ import { getCurrentYear } from "../utils/date.ts";
     <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
       <div class="md:col-span-2">
         <a href="/" class="flex items-center gap-2 mb-6 group inline-flex">
-          <div class="w-8 h-8 bg-zinc-900 dark:bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
-            <span class="text-white dark:text-zinc-900 font-bold text-lg leading-none">S</span>
-          </div>
-          <span class="text-xl font-bold tracking-tight text-zinc-900 dark:text-white">
-            Schuster
+          <Logo />
+          <span
+            class="text-xl font-bold tracking-tight text-zinc-900 dark:text-white"
+          >
+            Schuster Software
           </span>
         </a>
         <p class="text-zinc-600 dark:text-zinc-400 max-w-sm leading-relaxed">
-          A suite of modern software applications built with quality, care, and a focus on everyday utility.
+          A suite of modern software applications built with quality, care, and
+          a focus on everyday utility.
         </p>
       </div>
 
       <div>
-        <h4 class="font-semibold text-zinc-900 dark:text-white mb-6">Navigation</h4>
+        <h4 class="font-semibold text-zinc-900 dark:text-white mb-6">
+          Navigation
+        </h4>
         <ul class="space-y-4 text-sm">
           <li><a href="/#products" class="prose-link">Our Products</a></li>
           <li><a href="/contact" class="prose-link">Contact Us</a></li>
@@ -30,31 +34,13 @@ import { getCurrentYear } from "../utils/date.ts";
       </div>
 
       <div>
-        <h4 class="font-semibold text-zinc-900 dark:text-white mb-6">Connect</h4>
+        <h4 class="font-semibold text-zinc-900 dark:text-white mb-6">
+          Connect
+        </h4>
         <ul class="space-y-4 text-sm">
           <li>
             <a href="mailto:nick@schustersoftware.ca" class="prose-link">
               Email Support
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/nickschuster"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="prose-link"
-            >
-              GitHub
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/nikolas-schuster-25184b16b/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="prose-link"
-            >
-              LinkedIn
             </a>
           </li>
         </ul>
@@ -66,7 +52,11 @@ import { getCurrentYear } from "../utils/date.ts";
     >
       <p>© {getCurrentYear()} Schuster Software. All rights reserved.</p>
       <div class="flex gap-6">
-        <a href="/legal" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Legal</a>
+        <a
+          href="/legal"
+          class="hover:text-zinc-900 dark:hover:text-white transition-colors"
+          >Legal</a
+        >
       </div>
     </div>
   </div>

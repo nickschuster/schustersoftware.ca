@@ -4,7 +4,6 @@ export interface Product {
   description: string;
   image: string;
   technologies: string[];
-  github: string;
   status: "active" | "maintenance" | "archived" | "in-development";
   launchDate?: string;
   featured?: boolean;
@@ -22,7 +21,6 @@ export const products: Product[] = [
       "Make smarter betting decisions with AI-powered statistical analysis and real-time insights",
     image: "/images/bb.png",
     technologies: ["Angular", "LLMs", "NgRx", "RxJS", "NestJS"],
-    github: "https://github.com/nickschuster/betbeat",
     status: "active",
     featured: true,
     category: "finance",
@@ -42,7 +40,6 @@ export const products: Product[] = [
       "Track calories effortlessly and achieve your nutrition goals with smart meal planning",
     image: "/images/s.png",
     technologies: ["AWS", "React", "Material UI"],
-    github: "https://github.com/nickschuster/satiate",
     status: "active",
     featured: true,
     category: "health",
@@ -62,7 +59,6 @@ export const products: Product[] = [
       "Collaborate in real-time with an infinitely scalable whiteboard that never slows down",
     image: "/images/vw.png",
     technologies: ["AWS", "JQuery", "Socket.IO"],
-    github: "https://github.com/nickschuster/virtual-whiteboard-client",
     status: "active",
     featured: true,
     category: "productivity",
@@ -82,7 +78,6 @@ export const products: Product[] = [
       "Stay hydrated and healthy with intelligent water intake tracking and reminders",
     image: "/images/q.png",
     technologies: ["GCP", "Firebase", "Java", "Android"],
-    github: "https://github.com/nickschuster/quench",
     status: "maintenance",
     category: "health",
     features: [
@@ -102,7 +97,6 @@ export const products: Product[] = [
       "Challenge friends or play against AI in this classic strategy board game",
     image: "/images/nmb.png",
     technologies: ["Python", "PyGame"],
-    github: "https://github.com/nickschuster/nine-mens-morris",
     status: "maintenance",
     category: "gaming",
     features: [
@@ -121,7 +115,6 @@ export const products: Product[] = [
       "Compete in automated snake battles with strategic AI algorithms",
     image: "/images/bs.png",
     technologies: ["Python"],
-    github: "https://github.com/nickschuster/battlesnake-2020",
     status: "maintenance",
     category: "gaming",
     features: [

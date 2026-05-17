@@ -39,7 +39,7 @@ Schuster Software is a collection of independently developed applications, each 
 
 ## What's Next
 
-Stay tuned for more updates, blog posts, and announcements about our products. You can follow our progress on GitHub or subscribe to updates via our contact form.
+Stay tuned for more updates, blog posts, and announcements about our products. You can subscribe to updates via our contact form.
 
 Thanks for visiting!
     `,
