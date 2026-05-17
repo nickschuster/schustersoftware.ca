@@ -20,7 +20,9 @@ const { product } = Astro.props;
   data-category={product.category}
 >
   <!-- Background Image -->
-  <div class="absolute inset-0 z-0 flex items-center justify-center p-8 bg-white dark:bg-[#0a0a0a] transition-transform duration-700 group-hover:scale-105">
+  <div
+    class="absolute inset-0 z-0 flex items-center justify-center p-8 bg-white dark:bg-[#0a0a0a] transition-transform duration-700 group-hover:scale-105"
+  >
     {
       product.image ? (
         <img
@@ -35,12 +37,19 @@ const { product } = Astro.props;
   </div>
 
   <!-- Gradient Overlay -->
-  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 opacity-70 group-hover:opacity-90 transition-opacity duration-500"></div>
+  <div
+    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 opacity-70 group-hover:opacity-90 transition-opacity duration-500"
+  >
+  </div>
 
   <!-- Content -->
-  <div class="relative z-20 p-6 flex flex-col justify-end h-full transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+  <div
+    class="relative z-20 p-6 flex flex-col justify-end h-full transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-out"
+  >
     <div class="flex items-center justify-between mb-3">
-      <span class="text-[10px] font-bold uppercase tracking-widest text-white/90 bg-white/20 backdrop-blur-md px-2 py-1 rounded">
+      <span
+        class="text-[10px] font-bold uppercase tracking-widest text-white/90 bg-white/20 backdrop-blur-md px-2 py-1 rounded"
+      >
         {product.category}
       </span>
       {
@@ -51,27 +60,50 @@ const { product } = Astro.props;
         )
       }
     </div>
-    
-    <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-2 leading-tight">
+
+    <h3
+      class="text-2xl md:text-3xl font-extrabold text-white mb-2 leading-tight"
+    >
       {product.title}
     </h3>
-    
-    <p class="text-zinc-300 text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 h-0 group-hover:h-auto overflow-hidden">
+
+    <p
+      class="text-zinc-300 text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 h-0 group-hover:h-auto overflow-hidden"
+    >
       {product.description}
     </p>
 
-    <div class="mt-4 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150 h-0 group-hover:h-auto overflow-hidden">
-      {product.features && product.features.slice(0, 2).map((feature) => (
-        <span class="text-[10px] font-medium px-2 py-1 rounded-md bg-white/10 text-white/80 border border-white/10 backdrop-blur-sm">
-          {feature}
-        </span>
-      ))}
+    <div
+      class="mt-4 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150 h-0 group-hover:h-auto overflow-hidden"
+    >
+      {
+        product.features &&
+          product.features
+            .slice(0, 2)
+            .map((feature) => (
+              <span class="text-[10px] font-medium px-2 py-1 rounded-md bg-white/10 text-white/80 border border-white/10 backdrop-blur-sm">
+                {feature}
+              </span>
+            ))
+      }
     </div>
 
-    <div class="mt-4 flex items-center text-white text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 h-0 group-hover:h-auto overflow-hidden">
+    <div
+      class="mt-4 flex items-center text-white text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 h-0 group-hover:h-auto overflow-hidden"
+    >
       {product.ctaText}
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
       </svg>
     </div>
   </div>
