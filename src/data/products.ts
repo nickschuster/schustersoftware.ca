@@ -4,7 +4,12 @@ export interface Product {
   description: string;
   image: string;
   technologies: string[];
-  status: "active" | "maintenance" | "archived" | "in-development";
+  status:
+  | "active"
+  | "maintenance"
+  | "archived"
+  | "in-development"
+  | "deprecated";
   launchDate?: string;
   featured?: boolean;
   category: "productivity" | "health" | "gaming" | "finance";
@@ -15,18 +20,67 @@ export interface Product {
 
 export const products: Product[] = [
   {
-    id: "betbeat",
-    title: "BetBeat",
+    id: "kitsano",
+    title: "Kitsano",
     description:
-      "Make smarter betting decisions with AI-powered statistical analysis and real-time insights",
-    image: "/images/bb.png",
+      "Intelligent Document Processing (IDP) SaaS platform for digitizing and automating document workflows.",
+    image: "/images/kitsano.svg",
+    technologies: [
+      "SvelteKit",
+      "TypeScript",
+      "TailwindCSS",
+      "PostgreSQL",
+      "Terraform",
+    ],
+    status: "in-development",
+    category: "productivity",
+    features: [
+      "Multi-tenant data isolation",
+      "Permission-driven RBAC system",
+      "Tenant white-labeling & branding",
+      "Automated infrastructure provisioning",
+    ],
+    ctaText: "Coming Soon!",
+    ctaLink: "https://www.schustersoftware.ca",
+  },
+  {
+    id: "tasken",
+    title: "Tasken",
+    description:
+      "Your tasks, at the speed of thought. A radically fast, minimalist task manager with powerful keyboard controls and instant cloud sync.",
+    image: "/images/tasken.svg",
+    technologies: [
+      "Svelte",
+      "SvelteKit",
+      "TypeScript",
+      "TailwindCSS",
+      "PostgreSQL",
+    ],
+    status: "maintenance",
+    featured: true,
+    category: "productivity",
+    features: [
+      "Keyboard shortcut workflow",
+      "Instant cross-device sync",
+      "100% Free & Open Source",
+      "Zen minimalist design",
+    ],
+    ctaText: "Start Focusing",
+    ctaLink: "https://tasken.app",
+  },
+  {
+    id: "statbeat",
+    title: "StatBeat",
+    description:
+      "Make smarter analytical decisions with AI-powered statistical models and real-time data insights",
+    image: "/images/statbeat.svg",
     technologies: ["Angular", "LLMs", "NgRx", "RxJS", "NestJS"],
-    status: "active",
+    status: "deprecated",
     featured: true,
     category: "finance",
     features: [
       "AI-powered predictions",
-      "Real-time odds analysis",
+      "Real-time data analysis",
       "Risk assessment tools",
       "Historical data insights",
     ],
@@ -38,9 +92,9 @@ export const products: Product[] = [
     title: "Satiate",
     description:
       "Track calories effortlessly and achieve your nutrition goals with smart meal planning",
-    image: "/images/s.png",
+    image: "/images/satiate.svg",
     technologies: ["AWS", "React", "Material UI"],
-    status: "active",
+    status: "deprecated",
     featured: true,
     category: "health",
     features: [
@@ -49,17 +103,17 @@ export const products: Product[] = [
       "Progress analytics",
       "Recipe suggestions",
     ],
-    ctaText: "Track Your Meals",
-    ctaLink: "https://satiate.schustersoftware.ca",
+    ctaText: "View on GitHub",
+    ctaLink: "https://github.com/nickschuster/satiate",
   },
   {
     id: "virtual-whiteboard",
     title: "Virtual Whiteboard",
     description:
       "Collaborate in real-time with an infinitely scalable whiteboard that never slows down",
-    image: "/images/vw.png",
+    image: "/images/whiteboard.svg",
     technologies: ["AWS", "JQuery", "Socket.IO"],
-    status: "active",
+    status: "deprecated",
     featured: true,
     category: "productivity",
     features: [
@@ -68,17 +122,17 @@ export const products: Product[] = [
       "Multi-device sync",
       "Drawing tools",
     ],
-    ctaText: "Start Drawing",
-    ctaLink: "https://whiteboard.schustersoftware.ca",
+    ctaText: "View on GitHub",
+    ctaLink: "https://github.com/nickschuster/virtual-whiteboard-client",
   },
   {
     id: "quench",
     title: "Quench",
     description:
       "Stay hydrated and healthy with intelligent water intake tracking and reminders",
-    image: "/images/q.png",
+    image: "/images/quench.svg",
     technologies: ["GCP", "Firebase", "Java", "Android"],
-    status: "maintenance",
+    status: "archived",
     category: "health",
     features: [
       "Daily water goals",
@@ -86,18 +140,17 @@ export const products: Product[] = [
       "Hydration tracking",
       "Health insights",
     ],
-    ctaText: "Download App",
-    ctaLink:
-      "https://play.google.com/store/apps/details?id=com.schustersoftware.quench",
+    ctaText: "View on GitHub",
+    ctaLink: "https://github.com/nickschuster/quench",
   },
   {
     id: "nine-mens-morris",
     title: "Nine Men's Morris",
     description:
       "Challenge friends or play against AI in this classic strategy board game",
-    image: "/images/nmb.png",
+    image: "/images/ninemensmorris.svg",
     technologies: ["Python", "PyGame"],
-    status: "maintenance",
+    status: "archived",
     category: "gaming",
     features: [
       "Classic gameplay",
@@ -105,25 +158,7 @@ export const products: Product[] = [
       "Multiplayer support",
       "Strategy challenges",
     ],
-    ctaText: "Play Now",
-    ctaLink: "https://github.com/nickschuster/nine-mens-morris/releases",
-  },
-  {
-    id: "battlesnake",
-    title: "Battle Snake",
-    description:
-      "Compete in automated snake battles with strategic AI algorithms",
-    image: "/images/bs.png",
-    technologies: ["Python"],
-    status: "maintenance",
-    category: "gaming",
-    features: [
-      "AI battles",
-      "Tournament ready",
-      "Custom strategies",
-      "Real-time competition",
-    ],
-    ctaText: "Watch Battles",
-    ctaLink: "https://github.com/nickschuster/battlesnake-2020",
+    ctaText: "View on GitHub",
+    ctaLink: "https://github.com/nickschuster/nine-mens-morris",
   },
 ];
