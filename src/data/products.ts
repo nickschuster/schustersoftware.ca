@@ -85,7 +85,7 @@ export const products: Product[] = [
       "Historical data insights",
     ],
     ctaText: "Start Analyzing",
-    ctaLink: "https://betbeat.schustersoftware.ca",
+    ctaLink: "https://github.com/nickschuster/betbeat",
   },
   {
     id: "satiate",
