@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import { products } from "../data/products";
 
 const skills = [
@@ -80,7 +81,11 @@ const experience = [
         IDP - LLM, OCR and ML driven document processing, classification, and
         validation
       </li>
-      <li>JUCE - Learning the C++ audio framework, read about it on my <a href="/blog" class="underline underline-offset-4 hover:no-underline">blog</a></li>
+      <li>
+        JUCE - Learning the C++ audio framework, read about it on my <a
+          href="/blog"
+          class="underline underline-offset-4 hover:no-underline">blog</a>
+      </li>
     </ul>
 
     <h2 class="text-xl font-bold mt-12">Experience</h2>
@@ -134,18 +139,15 @@ const experience = [
 
     <h2 class="text-xl font-bold mt-12">Outside of software</h2>
     <ul class="list-disc pl-6 mt-2">
-      <li>
-        Guitar player.
-      </li>
-      <li>
-        Top 1% in CS:GO at one point.
-      </li>
+      <li>Guitar player.</li>
+      <li>Top 1% in CS:GO at one point.</li>
       <li>Golfer.</li>
       <li>Fitness enthusiast; occasional runner.</li>
       <li>
-        Language collector: fluent English and German, extemely basic Japanese and
-        Spanish, currently learning Farsi.
+        Language collector: fluent English and German, extremely basic Japanese
+        and Spanish, currently learning Farsi.
       </li>
     </ul>
   </main>
+  <Footer />
 </Layout>

@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
@@ -35,4 +36,5 @@ const formatDate = (date: Date) => date.toISOString().slice(0, 10);
       }
     </ul>
   </main>
+  <Footer />
 </Layout>

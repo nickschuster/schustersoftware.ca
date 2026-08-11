@@ -2,6 +2,7 @@
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -32,4 +33,5 @@ const formattedDate = post.data.date.toISOString().slice(0, 10);
       <Content />
     </div>
   </main>
+  <Footer />
 </Layout>
