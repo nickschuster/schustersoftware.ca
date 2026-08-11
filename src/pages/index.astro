@@ -1,18 +1,151 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import ProductGrid from "../components/ProductGrid.astro";
 import { products } from "../data/products";
+
+const skills = [
+  "TypeScript",
+  "JavaScript",
+  "SQL",
+  "Python",
+  "Node.js / NestJS",
+  "Event-driven architecture",
+  "Serverless",
+  "PostgreSQL",
+  "AWS",
+  "Docker",
+  "Terraform",
+  "GenAI / RAG pipelines",
+  "Vue.js",
+  "Angular",
+  "React",
+  "Svelte / SvelteKit",
+];
+
+const experience = [
+  {
+    title: "Director / Lead Software Developer",
+    company: "FundMore.ai",
+    period: "2026 to now",
+    summary:
+      "Steering an engineering org of 30 with 6 direct reports. Built CIAM / SSO and core banking integrations for a Tier-1 bank managing $100B+, and an external API platform that saved the org around $70k plus hundreds of engineering hours.",
+  },
+  {
+    title: "Senior Software Developer",
+    company: "FundMore.ai",
+    period: "2025",
+    summary:
+      "Shipped a customer portal that became a top sales driver, and trimmed $15k a month off the cloud bill. Also made CI 60% faster.",
+  },
+  {
+    title: "Software Developer",
+    company: "FundMore.ai",
+    period: "2021 to 2024",
+    summary:
+      "Early engineer on a mortgage underwriting platform now responsible for billions in volume. Built a GenAI assistant with RAG and tool calling, real-time collaboration framework for underwriters, and regulatory-grade audit logging.",
+  },
+  {
+    title: "Software Developer",
+    company: "Self-employed",
+    period: "2020 to 2021",
+    summary:
+      "Freelance. Variety of projects including a telehealth scheduling and video calling app, and a billing service for invoice processing.",
+  },
+];
 ---
 
 <Layout>
   <Header />
-  <main class="min-h-screen flex flex-col">
-    <Hero />
+  <main class="max-w-2xl mx-auto px-4 py-12">
+    <h1 class="text-2xl font-bold">About</h1>
+    <p class="mt-2">
+      I build fintech software. Currently Director / Lead Software Developer at
+      FundMore.ai, where the products I work on underwrite billions in
+      mortgages. I like to build things.
+    </p>
+    <p class="mt-2">
+      <a
+        href="https://github.com/nickschuster"
+        class="underline underline-offset-4 hover:no-underline">GitHub</a
+      >
+      &middot;
+      <a
+        href="https://www.linkedin.com/in/nikolas-schuster-25184b16b"
+        class="underline underline-offset-4 hover:no-underline">LinkedIn</a
+      >
+    </p>
+    <p class="mt-4">Currently exploring:</p>
+    <ul class="list-disc pl-6 mt-2">
+      <li>
+        IDP - LLM, OCR and ML driven document processing, classification, and
+        validation
+      </li>
+      <li>JUCE - Learning the C++ audio framework, read about it on my <a href="/blog" class="underline underline-offset-4 hover:no-underline">blog</a></li>
+    </ul>
 
-    <ProductGrid products={products} />
+    <h2 class="text-xl font-bold mt-12">Experience</h2>
+    <ul>
+      {
+        experience.map((role) => (
+          <li class="mt-6">
+            <h3 class="font-bold">{role.title}</h3>
+            <p class="text-sm">
+              {role.company}, {role.period}
+            </p>
+            <p class="mt-1">{role.summary}</p>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="mt-6 text-sm">
+      Information and Computer Systems, Camosun College, 2020. Graduated with
+      honors (8.9/9.0) and a Technical Excellence Award.
+    </p>
+
+    <h2 class="text-xl font-bold mt-12">Skills</h2>
+    <p class="mt-2">{skills.join(", ")}</p>
+
+    <h2 class="text-xl font-bold mt-12">Projects</h2>
+    <ul>
+      {
+        products.map((product) => (
+          <li class="mt-6">
+            <h3 class="font-bold">
+              {product.ctaLink ? (
+                <a
+                  href={product.ctaLink}
+                  class="underline underline-offset-4 hover:no-underline"
+                >
+                  {product.title}
+                </a>
+              ) : (
+                product.title
+              )}
+              {product.id === "kitsano" && (
+                <span class="font-normal text-sm"> (currently building)</span>
+              )}
+            </h3>
+            <p class="mt-1">{product.description}</p>
+            <p class="mt-1 text-sm">{product.technologies.join(", ")}</p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <h2 class="text-xl font-bold mt-12">Outside of software</h2>
+    <ul class="list-disc pl-6 mt-2">
+      <li>
+        Guitar player.
+      </li>
+      <li>
+        Top 1% in CS:GO at one point.
+      </li>
+      <li>Golfer.</li>
+      <li>Fitness enthusiast; occasional runner.</li>
+      <li>
+        Language collector: fluent English and German, extemely basic Japanese and
+        Spanish, currently learning Farsi.
+      </li>
+    </ul>
   </main>
-  <Footer />
 </Layout>

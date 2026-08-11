@@ -5,11 +5,11 @@ export interface Product {
   image: string;
   technologies: string[];
   status:
-  | "active"
-  | "maintenance"
-  | "archived"
-  | "in-development"
-  | "deprecated";
+    | "active"
+    | "maintenance"
+    | "archived"
+    | "in-development"
+    | "deprecated";
   launchDate?: string;
   featured?: boolean;
   category: "productivity" | "health" | "gaming" | "finance";
@@ -47,7 +47,7 @@ export const products: Product[] = [
     id: "tasken",
     title: "Tasken",
     description:
-      "Your tasks, at the speed of thought. A radically fast, minimalist task manager with powerful keyboard controls and instant cloud sync.",
+      "Your tasks, at the speed of thought. A fast, minimalist task manager with powerful keyboard controls and instant cloud sync.",
     image: "/images/tasken.svg",
     technologies: [
       "Svelte",
@@ -144,10 +144,27 @@ export const products: Product[] = [
     ctaLink: "https://github.com/nickschuster/quench",
   },
   {
+    id: "battlesnake-2020",
+    title: "BattleSnake 2020",
+    description:
+      "BattleSnake 2020 competitor and top 6 finisher in the open division",
+    image: "/images/bs.svg",
+    technologies: ["Python"],
+    status: "archived",
+    category: "gaming",
+    features: [
+      "Competitive AI snake",
+      "Top 6 open division finish",
+      "Pathfinding heuristics",
+    ],
+    ctaText: "View on GitHub",
+    ctaLink: "https://github.com/nickschuster/battlesnake-2020",
+  },
+  {
     id: "nine-mens-morris",
     title: "Nine Men's Morris",
     description:
-      "Challenge friends or play against AI in this classic strategy board game",
+      "The classic board game recreated in PyGame. Play against AI or a friend. Includes a networking server.",
     image: "/images/ninemensmorris.svg",
     technologies: ["Python", "PyGame"],
     status: "archived",

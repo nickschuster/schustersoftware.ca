@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const formatDate = (date: Date) => date.toISOString().slice(0, 10);
+---
+
+<Layout title="Blog | Nikolas Schuster">
+  <Header />
+  <main class="max-w-2xl mx-auto px-4 py-12">
+    <h1 class="text-2xl font-bold">Blog</h1>
+    <ul>
+      {
+        posts.map((post) => (
+          <li class="mt-6">
+            <a
+              href={`/blog/${post.id}`}
+              class="font-bold underline underline-offset-4 hover:no-underline"
+            >
+              {post.data.title}
+            </a>
+            <time datetime={formatDate(post.data.date)} class="ml-2 text-sm">
+              {formatDate(post.data.date)}
+            </time>
+            {post.data.description && (
+              <p class="mt-1">{post.data.description}</p>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>

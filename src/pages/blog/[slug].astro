@@ -1,0 +1,35 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const formattedDate = post.data.date.toISOString().slice(0, 10);
+---
+
+<Layout
+  title={`${post.data.title} | Nikolas Schuster`}
+  description={post.data.description}
+>
+  <Header />
+  <main class="max-w-2xl mx-auto px-4 py-12">
+    <a href="/blog" class="underline underline-offset-4 hover:no-underline">
+      &larr; Blog
+    </a>
+    <h1 class="text-2xl font-bold mt-6">{post.data.title}</h1>
+    <time datetime={formattedDate} class="text-sm">{formattedDate}</time>
+    <div class="prose mt-6">
+      <Content />
+    </div>
+  </main>
+</Layout>

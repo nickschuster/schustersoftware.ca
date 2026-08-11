@@ -1,5 +1,15 @@
 ---
 import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Nikolas Schuster",
+  description = "Nikolas Schuster. I build fintech software and side projects. Blog included.",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -7,30 +17,14 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Schuster Software - Smart tools for everyday life. Health tracking, productivity apps, and more."
-    />
+    <meta name="description" content={description} />
     <meta name="theme-color" content="#ffffff" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="light" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <meta name="generator" content={Astro.generator} />
-    <title>Schuster Software</title>
-    <script is:inline>
-      const theme = localStorage.getItem("theme") || "light";
-      if (
-        theme === "dark" ||
-        (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      }
-    </script>
+    <title>{title}</title>
   </head>
-  <body class="transition-colors duration-300">
+  <body>
     <slot />
   </body>
 </html>
