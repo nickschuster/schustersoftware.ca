@@ -1,6 +1,6 @@
 ---
 title: "C++, JUCE and setup fundamentals; JUCE Part 2"
-date: 2026-08-29
+date: 2026-08-31
 description: "Skipping the Projucer: setting up a JUCE project with CMake and Ninja on Windows"
 ---
 
