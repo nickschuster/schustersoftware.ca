@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "npm run build && aws s3 sync dist/ s3://schustersoftware.ca --delete",
+    "deploy": "npm run build && aws s3 sync dist/ s3://schustersoftware.ca --delete && npm run invalidate",
+    "invalidate": "aws cloudfront create-invalidation --distribution-id E11NHT0I08DRYG --paths \"/*\"",
     "format": "prettier --write ."
   },
   "dependencies": {
