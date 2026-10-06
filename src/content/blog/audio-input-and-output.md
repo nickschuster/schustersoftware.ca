@@ -14,7 +14,7 @@ However these crystals are never truly perfect. They are manufactured with a tol
 
 Any device connected to the internet corrects for this by checking its internal measurement against a set of master "time" servers. Any device that is offline cannot do this and so will eventually desync from "real" time. How do time servers authoritatively know what time it is? Read about it [here](https://learn.microsoft.com/en-us/windows-server/networking/windows-time-service/how-the-windows-time-service-works).
 
-Why is any of this relevant? Because your audio interface has one of these crystals in it too. 48,000 times per "crystal chip" second. Your speakers might have a different one. When these disagree about how long a second is our software (in this case JUCE) has to compensate in some way. Otherwise our audio playback will have unpleasant artifacts (e.g. clicking, dead spots). Today we are talking about sample rates, buffers, and what to do with them.
+Why is any of this relevant? Because your audio interface has one of these crystals in it too. It samples 48,000 times per "crystal chip" second. Your speakers might have a different one. When these disagree about how long a second is our software (in this case JUCE) has to compensate in some way. Otherwise our audio playback will have unpleasant artifacts (e.g. clicking, dead spots). Today we are talking about sample rates, buffers, and what to do with them.
 
 # Reading and Writing Music Bits
 
