@@ -71,6 +71,10 @@
   @apply font-mono text-sm;
 }
 
+pre {
+  text-wrap: auto;
+}
+
 .prose pre {
   @apply border border-black p-4 my-4 overflow-x-auto;
 }
