@@ -5,7 +5,9 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import Subscribe from "../../components/Subscribe.astro";
 
-const posts = (await getCollection("blog")).sort(
+const posts = (
+  await getCollection("blog", ({ data }) => !data.inProgress)
+).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 

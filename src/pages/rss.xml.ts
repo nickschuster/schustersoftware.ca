@@ -3,7 +3,9 @@ import { getCollection } from "astro:content";
 import type { APIContext } from "astro";
 
 export async function GET(context: APIContext) {
-  const posts = (await getCollection("blog")).sort(
+  const posts = (
+    await getCollection("blog", ({ data }) => !data.inProgress)
+  ).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
   );
 
