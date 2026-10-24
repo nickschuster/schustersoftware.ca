@@ -147,7 +147,7 @@ export const products: Product[] = [
     id: "battlesnake-2020",
     title: "BattleSnake 2020",
     description:
-      "BattleSnake 2020 competitor and top 6 finisher in the open division",
+      "BattleSnake 2020 competitor and top 6 finisher (out of 120 participants) in the open division",
     image: "/images/bs.svg",
     technologies: ["Python"],
     status: "archived",
