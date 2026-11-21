@@ -1,17 +1,17 @@
 ---
 title: "Equipment latency and real distortion; JUCE Part 4"
-date: 2026-10-24
+date: 2026-11-21
 description: "Measuring the latency impact of bad equipment and discussing the math, pre and post processing of real distortion effects."
-inProgress: true
+inProgress: false
 ---
 
 # Preamble
 
-Today we will examine a few things we previsouly glossed over in a bit more detail. Hopefully this will bring a lot of the moving parts involved into clarity. There are three main things I want to disect. Firstly, equipment. There are many places in the "equipment chain" doing many different things. Most of these cost time and therfore introduce some level of latency. Secondly, aliasing. This is something we have metnioned but what does it actually mean? Thirdly, real distortion. Today we'll dive into the math, pre and post processing required to properlly distort a signal in a deterministic way.
+Today we will examine a few things we previously glossed over in a bit more detail. Hopefully this will bring a lot of the moving parts involved into clarity. There are three main things I want to dissect. Firstly, equipment. There are many places in the "equipment chain" doing many different things. Most of these cost time and therefore introduce some level of latency. Secondly, aliasing. This is something we have mentioned but what does it actually mean? Thirdly, real distortion. Today we'll dive into the math, pre and post processing required to properly distort a signal in a deterministic way.
 
 ### Equiment and Aliasing
 
-**1. Analog**: A vibrating string disturbs a magnet in our guitar pickup. The magnet emits a tiny volatge (a few hundred milli volts) and passes them down a cable into our ADC device. The first thing that happens is artifical gain is applied to the signal so that our audio interface can accurately process the input.
+**1. Analog**: A vibrating string disturbs a magnet in our guitar pickup. The magnet emits a tiny voltage (a few hundred milli volts) and passes them down a cable into our ADC device. The first thing that happens is artificial gain is applied to the signal so that our audio interface can accurately process the input.
 
 **2. Anti-aliasing**: Now, all frequencies above half of of the sample rate of our ADC must be removed. For 48k, that is anything above 24k. Anything above this gets processed as a frequency that was not previously present in our input signal.
 
@@ -19,11 +19,11 @@ The metaphor I have seen online is that of a camera frame rate capturing somethi
 
 This effect is called aliasing and the removal/filtering of the signal frequencies is called an "anti-aliasing filter".
 
-**3. Sampling and quantizing.** The signal is measured and the measurement gets turned into an integer. However, most modern converters don't sample directly at 48 kHz. They use a technique called [delta-sigma conversion](https://en.wikipedia.org/wiki/Delta-sigma_modulation), which samples at a much much higher rate with very low precision, then runs those samples through another filter to convert them to accurate 48 kHz samples. This gets you a better result with cheaper analog parts. It also costs time (latency) because that filter needs to see a window of samples before it can produce an output. The process of taking a larger set and mapping it to a samller set is called "quantization".
+**3. Sampling and quantizing.** The signal is measured and the measurement gets turned into an integer. However, most modern converters don't sample directly at 48 kHz. They use a technique called [delta-sigma conversion](https://en.wikipedia.org/wiki/Delta-sigma_modulation), which samples at a much much higher rate with very low precision, then runs those samples through another filter to convert them to accurate 48 kHz samples. This gets you a better result with cheaper analog parts. It also costs time (latency) because that filter needs to see a window of samples before it can produce an output. The process of taking a larger set and mapping it to a smaller set is called "quantization".
 
-**4. USB.** The captured and quantized samples now have to make it to our CPU. Typically, and in our case, this is through a USB connection. USB is a technology we could write many blog posts on, for our case its only important to understand that it captures a "package" of samples, encodes them into a packet frame, and sends them to the CPU to decode. There is a buffer of packages on both side of the connection with the "to be transfered" and "to be decoded" packets. Both of these steps cost a little bit more time.
+**4. USB.** The captured and quantized samples now have to make it to our CPU. Typically, and in our case, this is through a USB connection. USB is a technology we could write many blog posts on, for our case its only important to understand that it captures a "package" of samples, encodes them into a packet frame, and sends them to the CPU to decode. There is a buffer of packages on both side of the connection with the "to be transferred" and "to be decoded" packets. Both of these steps cost a little bit more time.
 
-**5. OS and driver.** The operating system has many specialized pieces of software inside it that know how to interface with the specific hardward in your computer. These are called "drivers". When the audio packet is recieved, your OS calls the relevant audio driver to convert it to the currently understood format and passes it to any audio buffers that are currently ready and asking for input.
+**5. OS and driver.** The operating system has many specialized pieces of software inside it that know how to interface with the specific hardware in your computer. These are called "drivers". When the audio packet is received, your OS calls the relevant audio driver to convert it to the currently understood format and passes it to any audio buffers that are currently ready and asking for input.
 
 **6. JUCE.** JUCE exposes one such buffer. When the driver fills it up with data, it finally calls our very own `getNextAudioBlock` function.
 
@@ -31,7 +31,7 @@ All of these steps cost time and introduce latency of their own. Especially on c
 
 # Latency Measurements
 
-Unfortunately we can't directly measure the latency introduced directly by the RockSmith cable. We can only measure the total roundtrip latency between string pluck and audio output. In theory, if we had another interface, we coul compare measures under identical conditions to derive only the RealTone (tm) latency impact. I don't currently have another interface so this is not an option for us. Instead the number we get includes all stages of the audio processing loop.
+Unfortunately we can't directly measure the latency introduced directly by the RockSmith cable. We can only measure the total roundtrip latency between string pluck and audio output. In theory, if we had another interface, we could compare measures under identical conditions to derive only the RealTone (tm) latency impact. I don't currently have another interface so this is not an option for us. Instead the number we get includes all stages of the audio processing loop.
 
 The easiest way to get this number is to ask the driver in charge of the equipment. It keeps track of an internal estimate of the current latency state. JUCE exposes an easy way to query it.
 
@@ -57,7 +57,7 @@ void MainComponent::changeListenerCallback(juce::ChangeBroadcaster *)
 }
 ```
 
-There are a few intersting pieces we get from this, for a windows powered driver, the latency is actually fixed at 20ms. 10ms input and 10ms output. This something the default windows audio driver enforces. Practically this means by default we can't get better than 20ms but we can get much worse. If you choose a different audio device type like ASIO4ALL or DirectSound, you should be able to play around a bit with these figures.
+There are a few interesting pieces we get from this, for a windows powered driver, the latency is actually fixed at 20ms. 10ms input and 10ms output. This something the default windows audio driver enforces. Practically this means by default we can't get better than 20ms but we can get much worse. If you choose a different audio device type like ASIO4ALL or DirectSound, you should be able to play around a bit with these figures.
 
 The second piece is us. We have a 2.6 ms budget per callback and it would be good to know how much of it we are spending. There is a small trap here related to measuring this. The act of timing something costs something and as we previously discussed, our callback thread cannot touch the UI. The accepted pattern is to keep a running average in an atomic float and have the UI thread read its current state whenever it needs to update the interface. This way neither thread has to know about the other and we avoid all waiting.
 
@@ -103,13 +103,13 @@ Peak: 0.041 ms
 
 Before we get into the math we need one more idea. Any sound, no matter how complicated, can be described as a set of simple sine waves added together. You are probably familiar with what a sine wave [sounds like](https://www.youtube.com/watch?v=PAsMlDptjx8). On it's own, it's pretty boring.
 
-When you play an open string on a guitar you don't get a single 110 Hz sine wave. You get 110 Hz plus 220 Hz, 330 Hz, 440 Hz and so on. All those tones layered together is what creates the final sound your ears/brain percieves. The first one is called the "fundamental" and the multiples are called "harmonics". How loud each harmonic is relative to the others is a big part of why a guitar sounds like a guitar and not, for example, a piano playing the same note.
+When you play an open string on a guitar you don't get a single 110 Hz sine wave. You get 110 Hz plus 220 Hz, 330 Hz, 440 Hz and so on. All those tones layered together is what creates the final sound your ears/brain perceives. The first one is called the "fundamental" and the multiples are called "harmonics". How loud each harmonic is relative to the others is a big part of why a guitar sounds like a guitar and not, for example, a piano playing the same note.
 
 ### Clipping
 
 Real distortion is deterministic. The same input value always produces the same output value. We take a sample, change it in some way, and get a new sample. The dirty sound comes from the shape of that change. It's called the "curve"
 
-The simplest curve is a flat ceiling: boost the signal (mutliply all inputs by a constant greater than 1), then cut off anything that goes past the ceiling. This is called "hard clipping".
+The simplest curve is a flat ceiling: boost the signal (multiply all inputs by a constant greater than 1), then cut off anything that goes past the ceiling. This is called "hard clipping".
 
 ```c++
 float gain = 10.0f; // example number usually between 10-500
@@ -225,7 +225,7 @@ Oversampled distorion (loud)
 
 v3.0.0 is now available with real distortion. Download it, plug in a guitar and let me know what you think! You'll notice I've added a bit more UI, the two sliders control a global threshold and gain level, and the drop down lets you swap between all the distortion modes we talked about today. Everything else is just some fun stats about the running plugin.
 
-The next post will be our last post in JUCE land for now. We'll see about packaging and publishing our amazing app as a real plugin that can be used by other people in their DAWs. This includes some more UI work, a bit of a refactor, and some packaging/publishing intracacies.
+The next post will be our last post in JUCE land for now. We'll see about packaging and publishing our amazing app as a real plugin that can be used by other people in their DAWs. This includes some more UI work, a bit of a refactor, and some packaging/publishing intricacies.
 
 **CAUTION**: I still recommend headphones.
 
@@ -243,4 +243,4 @@ There are a few areas we have either glossed over or not covered that create the
 
 **What comes after**: A lot of what makes a recorded guitar sound like a recorded guitar comes from the speaker cabinet, the amp and the microphone in front of it, not purely the distortion. Serious amp sim plugins put a lot of work into modelling all of the nuances of that equipment. This is again typically some kind of dynamic effect depending on, for example, volume/intensity of play.
 
-**Everything that isn't DSP**: Aliasing (as we saw above), CPU usage, a UI that makes sense, good presets, not crashing, consistent updates and maintance are all factors that are also important and completely seperate from the actual effect.
+**Everything that isn't DSP**: Aliasing (as we saw above), CPU usage, a UI that makes sense, good presets, not crashing, consistent updates and maintenance are all factors that are also important and completely separate from the actual effect.
