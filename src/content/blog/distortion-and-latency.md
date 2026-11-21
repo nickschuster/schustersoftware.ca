@@ -223,7 +223,7 @@ Oversampled distorion (loud)
 
 ### Where We Landed
 
-v3.0.0 is now available with real distortion. Download it, plug in a guitar and let me know what you think! You'll notice I've added a bit more UI, the two sliders control a global threshold and gain level, and the drop down lets you swap between all the distortion modes we talked about today. Everything else is just some fun stats about the running plugin.
+[v3.0.0](https://github.com/nickschuster/juce_distortion_pedal/releases/tag/v3.0.0) is now available with real distortion. Download it, plug in a guitar and let me know what you think! You'll notice I've added a bit more UI, the two sliders control a global threshold and gain level, and the drop down lets you swap between all the distortion modes we talked about today. Everything else is just some fun stats about the running plugin.
 
 The next post will be our last post in JUCE land for now. We'll see about packaging and publishing our amazing app as a real plugin that can be used by other people in their DAWs. This includes some more UI work, a bit of a refactor, and some packaging/publishing intricacies.
 
