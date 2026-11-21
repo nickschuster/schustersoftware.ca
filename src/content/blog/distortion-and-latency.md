@@ -9,7 +9,7 @@ inProgress: false
 
 Today we will examine a few things we previously glossed over in a bit more detail. Hopefully this will bring a lot of the moving parts involved into clarity. There are three main things I want to dissect. Firstly, equipment. There are many places in the "equipment chain" doing many different things. Most of these cost time and therefore introduce some level of latency. Secondly, aliasing. This is something we have mentioned but what does it actually mean? Thirdly, real distortion. Today we'll dive into the math, pre and post processing required to properly distort a signal in a deterministic way.
 
-### Equiment and Aliasing
+### Equipment and Aliasing
 
 **1. Analog**: A vibrating string disturbs a magnet in our guitar pickup. The magnet emits a tiny voltage (a few hundred milli volts) and passes them down a cable into our ADC device. The first thing that happens is artificial gain is applied to the signal so that our audio interface can accurately process the input.
 
